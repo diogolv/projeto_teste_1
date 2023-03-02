@@ -30,6 +30,7 @@ services:
 
     # db mysql
     mysql:
+        container_name: especializati-mysql
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
@@ -39,7 +40,7 @@ services:
             MYSQL_USER: ${DB_USERNAME}
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
-        ports:
+        ports:  
             - "3388:3306"
         networks:
             - laravel-9
